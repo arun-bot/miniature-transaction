@@ -88,3 +88,6 @@ db.sqlite3
 
 ### Editor ###
 .vscode/settings.json
+
+### development settings ###
+transaction/settings/development.py
