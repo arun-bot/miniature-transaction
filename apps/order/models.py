@@ -1,6 +1,6 @@
 from django.db import models
 from helper.models import TimeStampedModel
-from ..merchant.models import Store, Catalog
+from apps.merchant.models import Store, Catalog
 
 STATUS_CHOICES = (
     ("Received", "Received"),

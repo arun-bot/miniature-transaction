@@ -11,7 +11,7 @@ pytz = "==2019.3"
 sqlparse = "==0.3.0"
 Django = ">=2.2.8"
 djangorestframework = "==3.10.3"
-mysql-python = "==1.4.6"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.7"
