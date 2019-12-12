@@ -1,5 +1,6 @@
 from django.db import models
-
+from helper.models import TimeStampedModel
+from merchant.models import Store, Catalog
 
 STATUS_CHOICES = (
     ("Received", "Received"),
@@ -14,14 +15,6 @@ PAYMENT_CHOICES = (
 
 
 # TODO: User field additions
-
-
-class TimeStampedModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
 
 
 class Order(TimeStampedModel):
@@ -42,7 +35,7 @@ class Order(TimeStampedModel):
 
 class OrderItem(TimeStampedModel):
     ordered = models.BooleanField(default=False)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item = models.ForeignKey(Catalog, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     amount = models.FloatField()
