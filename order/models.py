@@ -52,7 +52,7 @@ class OrderItem(TimeStampedModel):
 
 
 class OrderStatus(TimeStampedModel):
-    status = models.CharField(choices=STATUS_CHOICES, max_length=2)
+    status = models.CharField(choices=STATUS_CHOICES, max_length=100)
 
     def __str__(self):
         return f"{self.status}"
